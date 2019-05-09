@@ -44,11 +44,15 @@ for (let i = 0; i < paletteBlock.length; i++) {
 
 var trashCan = document.getElementById('delete')
 trashCan.addEventListener('click', function() {
-  var allCanvasSquares= document.getElementsByClassName('paintSquare')
-  for (var i = 0; i < allCanvasSquares.length; i++) {
-    // set all canvas squares to white
-    allCanvasSquares[i].style.backgroundColor = 'white'
+  if (confirm("Are you sure you want to delete this masterpiece? :(")) {
+    // delete canvas
+    var allCanvasSquares= document.getElementsByClassName('paintSquare')
+    for (var i = 0; i < allCanvasSquares.length; i++) {
+      // set all canvas squares to white
+      allCanvasSquares[i].style.backgroundColor = 'white'
+    }
   }
+
 })
 
 });
