@@ -15,11 +15,11 @@ function canvasHandler(item) {
   } else{
     item.style.backgroundColor = brushColor
   }
-
 }
 
 function paintBrushHandler(item){
   brushColor = item.id // blue, red, etc...
+
 }
 
 for (let i = 0; i < paintBlock.length; i++) {
@@ -29,8 +29,21 @@ for (let i = 0; i < paintBlock.length; i++) {
 }
 
 for (let i = 0; i < paletteBlock.length; i++) {
+
   paletteBlock[i].addEventListener('click', function() {
     paintBrushHandler(paletteBlock[i])
+    paletteBlock[i].style.border = "thick solid #000000"
+
+    for(let j = 0; j < paletteBlock.length; j++){
+      if(j !== i){
+        paletteBlock[j].style.border = "thick dotted #000000"
+      }
+
+    }
+
+
+
+
   })
 }
 });
