@@ -38,12 +38,17 @@ for (let i = 0; i < paletteBlock.length; i++) {
       if(j !== i){
         paletteBlock[j].style.border = "thick dotted #000000"
       }
-
     }
-
-
-
-
   })
 }
+
+var trashCan = document.getElementById('delete')
+trashCan.addEventListener('click', function() {
+  var allCanvasSquares= document.getElementsByClassName('paintSquare')
+  for (var i = 0; i < allCanvasSquares.length; i++) {
+    // set all canvas squares to white
+    allCanvasSquares[i].style.backgroundColor = 'white'
+  }
+})
+
 });
