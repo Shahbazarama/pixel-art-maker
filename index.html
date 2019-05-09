@@ -21,7 +21,7 @@
     }
 
     .paletteSquare {
-      border-style: dashed;
+      border-style: solid;
       border-width: 5px;
       width: 30px;
       height: 30px;
@@ -31,9 +31,20 @@
     #red {
       background-color: red;
     }
-
     #blue {
       background-color: blue;
+    }
+    #yellow {
+      background-color: yellow;
+    }
+    #green {
+      background-color: green;
+    }
+    #orange {
+      background-color: orange;
+    }
+    #purple {
+      background-color: purple;
     }
   </style>
 </head>
@@ -42,7 +53,6 @@
 
   <!-- Painting Canvas -->
   <script type="text/javascript">
-
     for (var j = 0; j < 20; j++) {
       // create rows with 'flexRow' class
       var flexRow = document.createElement('div')
@@ -58,18 +68,27 @@
       }
     }
   </script>
-
-
-
   <br>
-  <br>
-
   <!-- Color Palette -->
-  <div class="paletteSquare" id="blue">
-    <br>
-  </div>
-  <div class="paletteSquare" id="red">
-    <br>
+  <div class="flexRow">
+    <div class="paletteSquare" id="red">
+      <br>
+    </div>
+    <div class="paletteSquare" id="blue">
+      <br>
+    </div>
+    <div class="paletteSquare" id="yellow">
+      <br>
+    </div>
+    <div class="paletteSquare" id="green">
+      <br>
+    </div>
+    <div class="paletteSquare" id="orange">
+      <br>
+    </div>
+    <div class="paletteSquare" id="purple">
+      <br>
+    </div>
   </div>
 
   <script src="painting.js" charset="utf-8"></script>
