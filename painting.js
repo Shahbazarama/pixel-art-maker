@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 var paintBlock = document.querySelectorAll('.paintSquare')
 var paletteBlock = document.querySelectorAll('.paletteSquare')
 
+var isDrawing = false
+
 function canvasHandler(item) {
   if(item.style.backgroundColor == 'white'){
     item.style.backgroundColor = brushColor
-  } else if (item.style.backgroundColor == brushColor){
+  } else if (item.style.backgroundColor == brushColor && !isDrawing){
     item.style.backgroundColor = 'white'
   } else{
     item.style.backgroundColor = brushColor
@@ -19,15 +21,27 @@ function canvasHandler(item) {
 
 function paintBrushHandler(item){
   brushColor = item.id // blue, red, etc...
-
 }
 
+// Clickign on a canvas square
 for (let i = 0; i < paintBlock.length; i++) {
+  paintBlock[i].addEventListener('mousedown', function() {
+    isDrawing = true
+  })
+  paintBlock[i].addEventListener('mouseup', function() {
+    isDrawing = false
+  })
+  paintBlock[i].addEventListener('mouseenter', function() {
+    if(isDrawing){
+      canvasHandler(paintBlock[i])
+    }
+  })
   paintBlock[i].addEventListener('click', function() {
     canvasHandler(paintBlock[i])
   })
 }
 
+// Clicking on a palette color
 for (let i = 0; i < paletteBlock.length; i++) {
 
   paletteBlock[i].addEventListener('click', function() {
