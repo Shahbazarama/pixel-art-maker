@@ -23,7 +23,7 @@ function paintBrushHandler(item){
   brushColor = item.id // blue, red, etc...
 }
 
-// Clickign on a canvas square
+// Clicking on a canvas square
 for (let i = 0; i < paintBlock.length; i++) {
   paintBlock[i].addEventListener('mousedown', function() {
     isDrawing = true
