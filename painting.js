@@ -12,10 +12,13 @@ var isDrawing = false
 function canvasHandler(item) {
   if(item.style.backgroundColor == 'white'){
     item.style.backgroundColor = brushColor
+    item.style.borderColor = brushColor
   } else if (item.style.backgroundColor == brushColor && !isDrawing){
     item.style.backgroundColor = 'white'
+    item.style.borderColor = '#C1C1C1'
   } else{
     item.style.backgroundColor = brushColor
+    item.style.borderColor = brushColor
   }
 }
 
@@ -64,6 +67,7 @@ trashCan.addEventListener('click', function() {
     for (var i = 0; i < allCanvasSquares.length; i++) {
       // set all canvas squares to white
       allCanvasSquares[i].style.backgroundColor = 'white'
+      allCanvasSquares[i].style.borderColor = '#C1C1C1';
     }
   }
 
